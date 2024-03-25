@@ -1,0 +1,25 @@
+
+Revision History;
+Nov. 18, 2021: (K. Okuyama) first entry, copied from okuyamacro/ with minor update
+
+
+How to Use;
+1. If you use this for the first time,
+$ mkdir lib/
+$ mkdir bin/
+$ mkdir matrix/
+$ make
+
+2. If you want to estimate "Acceptance", etc.
+$ make
+$ ./bin/solid
+
+3. If you want to estimate "Resolution", etc.
+$ make
+$ ./bin/getMatrix	(<-- generate Reconstruction Matrices)
+$ ./bin/resolution  (<-- try Reconstruction)
+
+
+* If you want to change filenames, please see parFile.dat
+* If you have matrices you want to use, you can just do it as below.
+* $ ./bin/resoluiton

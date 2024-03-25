@@ -1,0 +1,179 @@
+  TTree *tree = dynamic_cast<TTree *>(gFile->Get("tree"));
+  //event ID
+  tree->Branch("evID",      &evID,   "evID/I");
+  //electron momentum
+  tree->Branch("EMom",      &Mom,   "EMom/D");
+  //electron theta,phi
+  tree->Branch("ETheta",  &Theta, "ETheta/D");
+  tree->Branch("EPhi",      &Phi,   "EPhi/D");
+  //electron x't,y't
+  tree->Branch("EXpt",      &Xpt,   "EXpt/D");
+  tree->Branch("EYpt",      &Ypt,   "EYpt/D");
+  //electron xt,yt,zt
+  tree->Branch("EXt",      &Xt,   "EXt/D");
+  tree->Branch("EYt",      &Yt,   "EYt/D");
+  tree->Branch("EZt",      &Zt,   "EZt/D");
+  //x,y,z,x',y' @ EQ1 in(local)
+  tree->Branch("EXQ1i",    &X[1],  "EXQ1i/D");
+  tree->Branch("EYQ1i",    &Y[1],  "EYQ1i/D");
+  tree->Branch("EZQ1i",    &Z[1],  "EZQ1i/D");
+  tree->Branch("EXpQ1i",  &Xp[1], "EXpQ1i/D");
+  tree->Branch("EYpQ1i",  &Yp[1], "EYpQ1i/D");
+  //x,y,x',y' @ EQ1 exit(local)
+  tree->Branch("EXQ1e",    &X[2],  "EXQ1e/D");
+  tree->Branch("EYQ1e",    &Y[2],  "EYQ1e/D");
+  tree->Branch("EXpQ1e",  &Xp[2], "EXpQ1e/D");
+  tree->Branch("EYpQ1e",  &Yp[2], "EYpQ1e/D");
+  //mom,x,y,x',y' @ EQ2 in(local)
+  tree->Branch("EPQ2i",    &P[2],  "EPQ2i/D");
+  tree->Branch("EXQ2i",    &X[3],  "EXQ2i/D");
+  tree->Branch("EYQ2i",    &Y[3],  "EYQ2i/D");
+  tree->Branch("EXpQ2i",  &Xp[3], "EXpQ2i/D");
+  tree->Branch("EYpQ2i",  &Yp[3], "EYpQ2i/D");
+  //mom,x,y,x',y' @ EQ2 exit(local)
+  tree->Branch("EXQ2e",    &X[4],  "EXQ2e/D");
+  tree->Branch("EYQ2e",    &Y[4],  "EYQ2e/D");
+  tree->Branch("EXpQ2e",  &Xp[4], "EXpQ2e/D");
+  tree->Branch("EYpQ2e",  &Yp[4], "EYpQ2e/D");
+  //x,y,x',y' @ ED in(local)
+  tree->Branch("EXDi",     &X[5],   "EXDi/D");
+  tree->Branch("EYDi",     &Y[5],   "EYDi/D");
+  tree->Branch("EXpDi",   &Xp[5],  "EXpDi/D");
+  tree->Branch("EYpDi",   &Yp[5],  "EYpDi/D");
+  //x,y,x',y' @ ED exit(local)
+  tree->Branch("EXDe",     &X[6],   "EXDe/D");
+  tree->Branch("EYDe",     &Y[6],   "EYDe/D");
+  tree->Branch("EXpDe",   &Xp[6],  "EXpDe/D");
+  tree->Branch("EYpDe",   &Yp[6],  "EYpDe/D");
+  //mom,pathlength,x,y,x',y',xv,yv,zv @ FP1(local)
+  //"v" means vertex of the track
+  tree->Branch("EPFP1",    &P[7],  "EPFP1/D");
+  tree->Branch("ELFP1",    &L[7],  "ELFP1/D");
+  tree->Branch("EXFP1",    &X[7],  "EXFP1/D");
+  tree->Branch("EYFP1",    &Y[7],  "EYFP1/D");
+  tree->Branch("EXpFP1",  &Xp[7], "EXpFP1/D");
+  tree->Branch("EYpFP1",  &Yp[7], "EYpFP1/D");
+  tree->Branch("EXvFP1",  &Xv[7], "EXvFP1/D");
+  tree->Branch("EYvFP1",  &Yv[7], "EYvFP1/D");
+  tree->Branch("EZvFP1",  &Zv[7], "EZvFP1/D");
+  //mom,pathlength,x,y,x',y',xv,yv,zv @ FP2(local)
+  tree->Branch("EPFP2",    &P[8],  "EPFP2/D");
+  tree->Branch("ELFP2",    &L[8],  "ELFP2/D");
+  tree->Branch("EXFP2",    &X[8],  "EXFP2/D");
+  tree->Branch("EYFP2",    &Y[8],  "EYFP2/D");
+  tree->Branch("EXpFP2",  &Xp[8], "EXpFP2/D");
+  tree->Branch("EYpFP2",  &Yp[8], "EYpFP2/D");
+  tree->Branch("EXvFP2",  &Xv[8], "EXvFP2/D");
+  tree->Branch("EYvFP2",  &Yv[8], "EYvFP2/D");
+  tree->Branch("EZvFP2",  &Zv[8], "EZvFP2/D");
+  //mom,pathlength,x,y,x',y',xv,yv,zv @ FP3(local)
+  tree->Branch("EPFP3",    &P[9],  "EPFP3/D");
+  tree->Branch("ELFP3",    &L[9],  "ELFP3/D");
+  tree->Branch("EXFP3",    &X[9],  "EXFP3/D");
+  tree->Branch("EYFP3",    &Y[9],  "EYFP3/D");
+  tree->Branch("EXpFP3",  &Xp[9], "EXpFP3/D");
+  tree->Branch("EYpFP3",  &Yp[9], "EYpFP3/D");
+  tree->Branch("EXvFP3",  &Xv[9], "EXvFP3/D");
+  tree->Branch("EYvFP3",  &Yv[9], "EYvFP3/D");
+  tree->Branch("EZvFP3",  &Zv[9], "EZvFP3/D");
+  //mom,pathlength,x,y,x',y',xv,yv,zv @ FP4(local)
+  tree->Branch("EPFP4",    &P[10],  "EPFP4/D");
+  tree->Branch("ELFP4",    &L[10],  "ELFP4/D");
+  tree->Branch("EXFP4",   &X[10],  "EXFP4/D");
+  tree->Branch("EYFP4",   &Y[10],  "EYFP4/D");
+  tree->Branch("EXpFP4", &Xp[10], "EXpFP4/D");
+  tree->Branch("EYpFP4", &Yp[10], "EYpFP4/D");
+  tree->Branch("EXvFP4", &Xv[10], "EXvFP4/D");
+  tree->Branch("EYvFP4", &Yv[10], "EYvFP4/D");
+  tree->Branch("EZvFP4", &Zv[10], "EZvFP4/D");
+  //mom,pathlength,x,y,x',y',xv,yv,zv @ FP5(local)
+  tree->Branch("EPFP5",   &P[11],  "EPFP5/D");
+  tree->Branch("ELFP5",   &L[11],  "ELFP5/D");
+  tree->Branch("EXFP5",   &X[11],  "EXFP5/D");
+  tree->Branch("EYFP5",   &Y[11],  "EYFP5/D");
+  tree->Branch("EXpFP5", &Xp[11], "EXpFP5/D");
+  tree->Branch("EYpFP5", &Yp[11], "EYpFP5/D");
+  tree->Branch("EXvFP5", &Xv[11], "EXvFP5/D");
+  tree->Branch("EYvFP5", &Yv[11], "EYvFP5/D");
+  tree->Branch("EZvFP5", &Zv[11], "EZvFP5/D");
+  //Don't care from here
+  tree->Branch("EXSS",   &X[12], "EXSS/D");
+  tree->Branch("EYSS",   &Y[12], "EYSS/D");
+  tree->Branch("EZSS",   &Z[12], "EZSS/D");
+  tree->Branch("EXpSS",   &Xp[12], "EXpSS/D");
+  tree->Branch("EYpSS",   &Yp[12], "EYpSS/D");
+  tree->Branch("EXvSS", &Xv[12], "EXvSS/D");
+  tree->Branch("EYvSS", &Yv[12], "EYvSS/D");
+  tree->Branch("EZvSS", &Zv[12],   "EZvSS/D");
+  tree->Branch("EXVC",   &X[13],  "EXVC/D");
+  tree->Branch("EYVC",   &Y[13],  "EYVC/D");
+  tree->Branch("EZVC",   &Z[13],  "EZVC/D");
+  tree->Branch("EXpVC",   &Xp[13],  "EXpVC/D");
+  tree->Branch("EYpVC",   &Yp[13],  "EYpVC/D");
+  tree->Branch("EXvVC", &Xv[13], "EXvVC/D");
+  tree->Branch("EYvVC", &Yv[13], "EYvVC/D");
+  tree->Branch("EZvVC", &Zv[13], "EZvVC/D");
+  tree->Branch("EPSPLP",   &P[14],  "EPSPLP/D");
+  tree->Branch("EXSPLP",  &X[14], "EXSPLP/D");
+  tree->Branch("EYSPLP",  &Y[14], "EYSPLP/D");
+  tree->Branch("EXpSPLP",  &Xp[14], "EXpSPLP/D");
+  tree->Branch("EYpSPLP",  &Yp[14], "EYpSPLP/D");
+  tree->Branch("EXvSPLP",&Xv[14],"EXvSPLP/D");
+  tree->Branch("EYvSPLP",&Yv[14],"EYvSPLP/D");
+  tree->Branch("EZvSPLP",&Zv[14],"EZvSPLP/D");
+  tree->Branch("EPSPLP",   &P[14],  "EPSPLP/D");
+  //to here 
+  //===Drift Chamber===//
+  //same as FPs
+  for (int i=0;i<10;i++){
+    sprintf(sPEDC,"PEDC%d",i+1); 
+    sprintf(sPEDCD,"PEDC%d/D",i+1); 
+    sprintf(sXEDC,"XEDC%d",i+1); 
+    sprintf(sXEDCD,"XEDC%d/D",i+1); 
+    sprintf(sYEDC,"YEDC%d",i+1); 
+    sprintf(sYEDCD,"YEDC%d/D",i+1); 
+    sprintf(sZEDC,"ZEDC%d",i+1); 
+    sprintf(sZEDCD,"ZEDC%d/D",i+1); 
+    sprintf(sXpEDC,"XpEDC%d",i+1); 
+    sprintf(sXpEDCD,"XpEDC%d/D",i+1); 
+    sprintf(sYpEDC,"YpEDC%d",i+1); 
+    sprintf(sYpEDCD,"YpEDC%d/D",i+1); 
+    tree->Branch(sPEDC,    &EDC1P[i],   sPEDCD);
+    tree->Branch(sXEDC,    &EDC1X[i],   sXEDCD);
+    tree->Branch(sYEDC,    &EDC1Y[i],   sYEDCD);
+    tree->Branch(sZEDC,    &EDC1Z[i],   sZEDCD);
+    tree->Branch(sXpEDC,   &EDC1Xp[i],   sXpEDCD);
+    tree->Branch(sYpEDC,   &EDC1Yp[i],   sYpEDCD);
+  }
+  for (int i=0;i<6;i++){
+    sprintf(sPEDC,"PEDC%d",i+11); 
+    sprintf(sPEDCD,"PEDC%d/D",i+11); 
+    sprintf(sXEDC,"XEDC%d",i+11); 
+    sprintf(sXEDCD,"XEDC%d/D",i+11); 
+    sprintf(sYEDC,"YEDC%d",i+11); 
+    sprintf(sYEDCD,"YEDC%d/D",i+11); 
+    sprintf(sZEDC,"ZEDC%d",i+11); 
+    sprintf(sZEDCD,"ZEDC%d/D",i+11); 
+    sprintf(sXpEDC,"XpEDC%d",i+11); 
+    sprintf(sXpEDCD,"XpEDC%d/D",i+11); 
+    sprintf(sYpEDC,"YpEDC%d",i+11); 
+    sprintf(sYpEDCD,"YpEDC%d/D",i+11); 
+    tree->Branch(sPEDC,    &EDC2P[i],   sPEDCD);
+    tree->Branch(sXEDC,    &EDC2X[i],   sXEDCD);
+    tree->Branch(sYEDC,    &EDC2Y[i],   sYEDCD);
+    tree->Branch(sZEDC,    &EDC2Z[i],   sZEDCD);
+    tree->Branch(sXpEDC,   &EDC2Xp[i],   sXpEDCD);
+    tree->Branch(sYpEDC,   &EDC2Yp[i],   sYpEDCD);
+  }
+  //===Trigger==// 
+  //hit VDs (pass through magnets)
+  tree->Branch("EVDTrig",&VDTrig,"EVDTrig/B");
+  //events come from target
+  tree->Branch("EVtxTrig",&VtxTrig,"EVtxTrig/B");
+  //don't hit SPL
+  tree->Branch("ESPLTrig",&SPLTrig,"ESPLTrig/B");
+  //hit EDCs
+  tree->Branch("EDCTrig",&EDCTrig,"EDCTrig/B");
+  //don't care
+  tree->Branch("PBTrig",&PBTrig,"PBTrig/B");
+  

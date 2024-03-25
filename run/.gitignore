@@ -1,0 +1,7 @@
+/*
+!/.gitignore
+!/iamges
+!/input/*.in
+!/macro/*
+!/scan/
+!/compile.sh
